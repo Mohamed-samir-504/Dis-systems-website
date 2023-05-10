@@ -59,7 +59,7 @@ button:hover{
 hr {
   width: 30px;
   height: 2px;
-  background-color: #fb774b;
+  background-color: rgb(20, 161, 20);
 }
 
 .navbar{
@@ -91,3 +91,31 @@ hr {
   align-items: flex-start;
 }
 
+
+/*products*/
+
+.product{
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.product img{
+  transition: 0.3s all;
+}
+
+.product:hover img{
+  opacity: 0.7;;
+}
+
+.product .buy-btn{
+  background: rgb(20, 161, 20);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s all;
+}
+
+.product:hover .buy-btn{
+  
+  transform: translateY(0);
+  opacity: 1;
+  
+}
