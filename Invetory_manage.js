@@ -49,9 +49,21 @@ var jsonObject ={
 
 window.onload = ()=>{
     jsonObject.Products.forEach((p) => loadProducts(p));
+
+    const all_products = document.querySelectorAll("div.product")
+
+    all_products.forEach((pro)=>{
+    
+    pro.addEventListener('click',(event)=>{
+        let id = pro.getAttribute("id");
+        let found_p = jsonObject.Products.find((product) => product.id === id);
+        localStorage.setItem('selected_p', JSON.stringify(found_p));
+        
+        window.location.href = "sproduct.html";
+    });
+    
+})
 }
-
-
 
 
 var row = document.getElementById("main-row")
@@ -59,6 +71,7 @@ var row = document.getElementById("main-row")
 function loadProducts(data){
     var d = document.createElement("div");
     d.setAttribute("class" , "product text-center col-lg-3 col-md-4 col-12")
+    d.setAttribute("id" , `${data.id}`)
     d.innerHTML = 
     '<img style="width: 100%; height: auto; box-sizing: border-box; object-fit: cover;" class="img-fluid mb-3" src="'+data.img+'" alt="">'+
     '<h5 class="p-name">'+data.name+'</h5>'+
@@ -68,3 +81,4 @@ function loadProducts(data){
 
     document.getElementById("main-row").appendChild(d);
 }
+
