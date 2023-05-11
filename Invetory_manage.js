@@ -31,6 +31,16 @@ var jsonObject ={
             "manufacturing_company": "Sample2",
             "quantity": 20
         },
+        {
+            "id": "3",
+            "img": "img/shop/14.jpg",
+            "name": "LOL",
+            "price": 1000,
+            "description": "This is LOL",
+            "Category": "LOL",
+            "manufacturing_company": "SampleLOL",
+            "quantity": 1
+        }
 
     ]
 }
@@ -53,7 +63,7 @@ function loadProducts(data){
     '<img style="width: 100%; height: auto; box-sizing: border-box; object-fit: cover;" class="img-fluid mb-3" src="'+data.img+'" alt="">'+
     '<h5 class="p-name">'+data.name+'</h5>'+
     '<h4 class="p-price">$'+data.price+'</h4>'+
-    '<h3 class="quantity">'+data.quantity+'pieces left'+'</h3>'+
+    '<h3 class="quantity">'+data.quantity+' pieces left'+'</h3>'+
     '<button class="buy-btn">Buy now</button>'+'</div>'
 
     document.getElementById("main-row").appendChild(d);
